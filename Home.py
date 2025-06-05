@@ -57,6 +57,17 @@ st.markdown("""
 
 # Banner
 st.markdown("""
+    <style>
+        .banner h1 {
+            white-space: nowrap;
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+        }
+        .banner p {
+            font-size: 1.2em;
+        }
+    </style>
+    
     <div class="banner">
         <h1>Stay Healthy, Stay Empowered.</h1>
         <p>Join NutriApp to track your meals, analyze your nutrition, and stay on top of your health goals.</p>
