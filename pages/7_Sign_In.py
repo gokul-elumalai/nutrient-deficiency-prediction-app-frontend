@@ -100,7 +100,6 @@ def run():
         st.error(CustomError.E0025)
     except Exception as e:
         st.error(CustomError.E0011)
-        st.exception(e)
 
 
 # Call run() if this script is directly executed
