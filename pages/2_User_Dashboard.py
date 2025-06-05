@@ -129,7 +129,7 @@ def show_diet_recommendation(user_data, headers):
             st.warning(CustomError.E0014)
 
         st.divider()
-        if st.button("Check out Nutrient Analysis Page", help="Click to go Nutrient Analysis Page"):
+        if st.button("📊 Check out Nutrient Analysis Page", help="Click to go Nutrient Analysis Page"):
             switch_page(NUTRIENT_ANALYSIS_PAGE)
 
     except Exception as e:
