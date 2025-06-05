@@ -43,7 +43,7 @@ def render_food_log_form():
             "monounsaturated_fat": st.number_input("Monounsaturated Fat (g)", min_value=0.0, format="%.2f"),
         }
 
-        submitted = st.form_submit_button("Submit Food Log")
+        submitted = st.form_submit_button("💾 Save")
         if submitted:
 
             if submitted:
@@ -96,9 +96,8 @@ def run():
             submit_food_log(payload)
 
         st.divider()
-        if st.button("View Food Logs", help="Click to go view food logs"):
+        if st.button("📋 View Food Logs", help="Click to go view food logs"):
             switch_page(VIEW_FOOD_LOG_PAGE)
-
     except requests.exceptions.ConnectionError:
         st.error(CustomError.E0025)
     except Exception as e:

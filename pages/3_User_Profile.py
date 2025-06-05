@@ -3,7 +3,7 @@ import requests
 from streamlit import switch_page
 
 from utils.constants import CustomError, LOGGED_IN, USER_DETAILS_URL, USER_ID, CustomSuccess, GENDERS, CHRONIC_DISEASES, \
-    OPTIONS, DIETARY_HABITS, CUISINES, ALLERGIES, FOOD_AVERSIONS, SIGN_IN_PAGE
+    OPTIONS, DIETARY_HABITS, CUISINES, ALLERGIES, FOOD_AVERSIONS, SIGN_IN_PAGE, DASHBOARD_PAGE
 
 
 # --- Authentication Check ---
@@ -78,7 +78,7 @@ def user_details_form(form_defaults: dict, is_update: bool, headers: dict, user_
         fat = st.number_input("Fat (g)", min_value=0.0, value=form_defaults.get("fat_intake", 70.0))
         carb = st.number_input("Carbohydrates (g)", min_value=0.0, value=form_defaults.get("carbohydrate_intake", 250.0))
 
-        submitted = st.form_submit_button("Update" if is_update else "Save")
+        submitted = st.form_submit_button("💾 Update" if is_update else "💾 Save")
 
     if submitted:
         payload = {
@@ -139,6 +139,10 @@ def run():
 
         is_update, form_defaults = fetch_user_details(headers)
         user_details_form(form_defaults, is_update, headers, user_id)
+
+        st.divider()
+        if st.button("📊 Go to Dashboard", help="Click to go to Dashboard"):
+            switch_page(DASHBOARD_PAGE)
 
     except requests.exceptions.ConnectionError:
         st.error(CustomError.E0025)

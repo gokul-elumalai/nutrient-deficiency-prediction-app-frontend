@@ -18,7 +18,7 @@ def authenticate():
         st.stop()
 
 def logout_button():
-    if st.button(LOGOUT, key=Button.LOGOUT_BUTTON, help="Click to logout"):
+    if st.button(f"⟳ {LOGOUT}", key=Button.LOGOUT_BUTTON, help="Click to logout"):
         st.session_state.logged_in = False
         st.session_state.username = ""
         switch_page(APP_MAIN_PAGE)

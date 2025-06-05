@@ -42,7 +42,7 @@ def signup_form():
         full_name = st.text_input("Full Name")
         email = st.text_input("Email")
         password = st.text_input("Password", type="password")
-        submit_btn = st.form_submit_button("Create Account", help="Create Account")
+        submit_btn = st.form_submit_button("Create Account 🌱", help="Create Account")
 
     if submit_btn:
         try:

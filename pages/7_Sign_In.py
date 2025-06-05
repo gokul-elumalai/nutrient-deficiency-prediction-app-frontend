@@ -70,13 +70,13 @@ def logout_section():
     col1, col2, col3 = st.columns([1, 2, 1])
     with col1:
 
-        if st.button("Go to Dashboard", help="Click to go Dashboard"):
+        if st.button("📊 Go to Dashboard", help="Click to go Dashboard"):
             switch_page(DASHBOARD_PAGE)
 
     with col3:
-        colA, colB = st.columns(2)
+        colA, colB = st.columns([1, 2])
         with colB:
-            if st.button(LOGOUT, key=Button.LOGOUT_BUTTON, help="Click to logout"):
+            if st.button(f"⟳ {LOGOUT}", key=Button.LOGOUT_BUTTON, help="Click to logout"):
                 for key in [LOGGED_IN, USERNAME, USER_ID, TOKEN]:
                     st.session_state[key] = None if key != LOGGED_IN else False
                 switch_page(APP_MAIN_PAGE)
