@@ -99,6 +99,8 @@ def run():
         if st.button("View Food Logs", help="Click to go view food logs"):
             switch_page(VIEW_FOOD_LOG_PAGE)
 
+    except requests.exceptions.ConnectionError:
+        st.error(CustomError.E0025)
     except Exception as e:
         st.error(CustomError.E0011)
         st.exception(e)

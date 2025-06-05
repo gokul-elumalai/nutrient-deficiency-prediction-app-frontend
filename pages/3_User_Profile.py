@@ -140,6 +140,8 @@ def run():
         is_update, form_defaults = fetch_user_details(headers)
         user_details_form(form_defaults, is_update, headers, user_id)
 
+    except requests.exceptions.ConnectionError:
+        st.error(CustomError.E0025)
     except Exception as e:
         st.error(CustomError.E0011)
         st.exception(e)

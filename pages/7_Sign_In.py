@@ -96,6 +96,8 @@ def run():
         else:
             login_form()
 
+    except requests.exceptions.ConnectionError:
+        st.error(CustomError.E0025)
     except Exception as e:
         st.error(CustomError.E0011)
         st.exception(e)

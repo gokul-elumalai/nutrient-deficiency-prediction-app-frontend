@@ -159,6 +159,8 @@ def run():
         st.divider()
         show_diet_recommendation(user_data, headers)
 
+    except requests.exceptions.ConnectionError:
+        st.error(CustomError.E0025)
     except Exception as e:
         st.error(CustomError.E0011)
         st.exception(e)

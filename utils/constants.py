@@ -107,6 +107,8 @@ class CustomError(str, Enum):
     E0021 = "Failed to fetch nutrient data."
     E0022 = "⚠️ Please enter a valid food name."
     E0023 = "❌ Please enter a non-zero calorie value."
+    E0024 = "❌ Failed to delete your account."
+    E0025 = "⚠️ Cannot connect to the server. Please check your internet connection or try again later."
 
     def __str__(self):
         return self.value
@@ -119,6 +121,7 @@ class CustomSuccess(str, Enum):
     S0003 = "User profile saved successfully!"
     S0004 = "Food log created successfully."
     S0005 = "✅ Deleted successfully. Please refresh the page."
+    S0006 = "✅ Your account has been deleted successfully."
 
     def __str__(self):
         return self.value

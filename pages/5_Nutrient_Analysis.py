@@ -112,6 +112,8 @@ def run():
         render_styled_table(df)
         render_bar_chart(df)
 
+    except requests.exceptions.ConnectionError:
+        st.error(CustomError.E0025)
     except Exception as e:
         st.error(CustomError.E0011)
         st.exception(e)
