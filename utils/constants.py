@@ -15,7 +15,7 @@ AUTH_TOKEN = (
 FOOD_LOG_URL = f"{BACKEND_URL}/food-log"
 LATEST_FOOD_LOG_URL = f"{FOOD_LOG_URL}/latest/?days=7"
 DELETE_FOOD_LOG_URL_TEMPLATE = f"{FOOD_LOG_URL}/{{}}"  # format with log ID
-DIET_PREDICT_URL = "http://localhost:8000/api/v1/predict/diet"
+DIET_PREDICT_URL = f"{BACKEND_URL}/predict/diet"
 NUTRIENT_ANALYSIS_URL = f"{FOOD_LOG_URL}/nutrition-summary/"
 
 # === User Details ===
