@@ -1,4 +1,4 @@
-
+from utils.constants import DISPLAY_NAME_MAP
 
 
 def get_bmi_color(bmi_class: str) -> str:
@@ -19,7 +19,7 @@ def prepare_view(row: dict) -> str:
     """
     view = f'<div style="font-size:16px">'
     for k, v in row.items():
-        row_view = f'<br><b>{k.capitalize()}:</b> {v}'
+        row_view = f'<br><b>{DISPLAY_NAME_MAP.get(k, k)}:</b> {v}'
         view += row_view
 
     view += "</div>"

@@ -79,7 +79,11 @@ DISPLAY_NAME_MAP = {
     'iron': "Iron (g)",
     'calcium': "Calcium (g)",
     'vitamin_a': "Vitamin A (IU)",
-    'vitamin_c': "Vitamin C (IU)"
+    'vitamin_c': "Vitamin C (IU)",
+    'saturated_fat':'Saturated Fat',
+    'trans_fat': "Trans Fat",
+    'polyunsaturated_fat': "Polyunsaturated Fat",
+    "monounsaturated_fat": "Monounsaturated Fat"
 }
 
 

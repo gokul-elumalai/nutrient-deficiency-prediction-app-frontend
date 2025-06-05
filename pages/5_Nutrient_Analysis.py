@@ -37,7 +37,7 @@ def fetch_nutrient_data():
 def prepare_nutrient_dataframe(data):
     avg = data["average"]
     rec = data["recommended"]
-    nutrients = [DISPLAY_NAME_MAP.get(nutrient, "") for nutrient in avg.keys()]
+    nutrients = [DISPLAY_NAME_MAP.get(nutrient, nutrient) for nutrient in avg.keys()]
 
     df = pd.DataFrame({
         "Nutrient": nutrients,
