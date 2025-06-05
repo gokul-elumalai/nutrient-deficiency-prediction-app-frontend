@@ -102,6 +102,5 @@ def run():
         st.error(CustomError.E0011)
 
 
-# Call run() if this script is directly executed
 if __name__ == "__main__":
     run()
