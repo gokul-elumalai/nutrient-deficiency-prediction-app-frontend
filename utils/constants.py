@@ -2,7 +2,7 @@ from enum import Enum, unique
 
 # === Backend Base URL ===
 # BACKEND_URL = "http://localhost:8000/api/v1"
-BACKEND_URL = "https://e5a2-115-97-47-27.ngrok-free.app/api/v1"
+BACKEND_URL = "https://a97a-2401-4900-93ed-1784-fdcb-86b3-e5d0-a27.ngrok-free.app/api/v1"
 
 # === Authentication ===
 LOGIN_URL = f"{BACKEND_URL}/auth/login/access-token"
