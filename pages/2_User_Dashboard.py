@@ -101,7 +101,9 @@ def show_charts(df):
     line_fig.update_layout(
         xaxis_tickformat="%b %d %H:%M",  # Example: Jun 03 14:15
         xaxis_title="Date",
-        yaxis_title="Calories",
+        yaxis_title="Calories (kcal)",
+        xaxis_title_font=dict(size=18),
+        yaxis_title_font=dict(size=18),
         font=dict(size=16)
     )
     st.plotly_chart(line_fig, use_container_width=True)
@@ -111,11 +113,24 @@ def show_charts(df):
     macro_df = pd.DataFrame.from_dict({k.capitalize(): v for k, v in macros.items()}, orient='index', columns=['g']).reset_index()
     macro_df.columns = ['Macronutrient', 'g']
     bar_fig = px.bar(macro_df, x='Macronutrient', y='g', text='g', color='Macronutrient')
+    bar_fig.update_layout(
+        xaxis_title="Macronutrient",
+        yaxis_title="Grams (g)",
+        xaxis_title_font=dict(size=18),
+        yaxis_title_font=dict(size=18),
+        legend_title_font=dict(size=16),
+        legend=dict(font=dict(size=16)),
+        font=dict(size=14)
+    )
     st.plotly_chart(bar_fig, use_container_width=True)
 
     st.markdown("#### Meal Type Distribution")
     meal_dist = df['meal_type'].value_counts()
     pie_fig = px.pie(names=[m.capitalize() for m in meal_dist.index], values=meal_dist.values)
+    pie_fig.update_layout(
+        legend=dict(font=dict(size=16)),
+        font=dict(size=14)
+    )
     st.plotly_chart(pie_fig, use_container_width=True)
 
 def show_diet_recommendation(user_data, headers):
